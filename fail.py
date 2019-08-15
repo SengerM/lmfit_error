@@ -18,7 +18,7 @@ active_area = np.genfromtxt('temp_active_area').transpose()
 x_vals = np.genfromtxt('temp_x').transpose()
 ecdf = np.genfromtxt('temp_ecdf').transpose()
 
-model = lmfit.Model(model_poisson_forced)
+model = lmfit.Model(model_poisson_forced) # If "model_poisson_forced" is replaced by "model_lin" it works
 params = model.make_params()
 params['gain'].set(value = 1, max = 1.5, min = .5)
 params['shift'].set(value = 0, max = 1, min = -1)
